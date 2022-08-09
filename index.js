@@ -231,9 +231,10 @@ Use getArtistByIndex to do the following:
 
 🌟 EXAMPLE: if getArtistByIndex is invoked with the artists array and the number 0, it will return `the artist at index 0 is Amedeo Modigliani` */
 
-function getArtistByIndex(/*Your Code Here*/) {
-  /*Your Code Here*/
+function getArtistByIndex(array, num) {
+return `the artist at index ${num} is ${array[num].name}`;
 }
+console.log(getArtistByIndex(artists, 3));
 
 
 
@@ -245,11 +246,19 @@ Use copy to do the following:
 🌟 EXAMPLE of return: ["Amedeo Modigliani", "Vasiliy Kandinskiy", "Diego Rivera"....]
 */
 
-function listOfNames(/*Your Code Here*/) {
-  /*Your Code Here*/
+function listOfNames(array) {
+  let newArray = [...array];
+for(let i = 0; i<newArray.length; i++) {
+  newArray[i] = newArray[i].name;
+
+
 }
 
+return newArray;
 
+}
+
+console.log(listOfNames(artists));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Use removeArtist to do the following:
@@ -260,10 +269,14 @@ Use removeArtist to do the following:
 5. Return the resulting copied array
 🌟 EXAMPLE: if removeArtist is invoked with the artists array and the number 0, it will return the resulting array with Amedeo Modigliani removed from our dataset. */
 
-function removeArtist(/*Your Code Here*/) {
-  /*Your Code Here*/
+function removeArtist(array, num) {
+ let newArray =[...array];
+
+ newArray.splice(num, 1);
+ return newArray;
 }
 
+console.log(removeArtist(artists, 3));
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -281,9 +294,20 @@ Use addArtist to do the following:
 4. Return the array
 🌟 EXAMPLE: Invoking addArtist(artists, 'John Doe', '1988-2022', 'Full Stack Development', 'African American', 'I have a background in customer service at Big Retail Chain. I am attending BloomTech to become a Frontend Developer.') should return the artists array with the above object added to the end of the array. */
 
-function addArtist(/*Your Code Here*/) {
-  /*Your Code Here*/
+function addArtist(array, nameParam, yearsParam, genreParam, nationalityParam, bioParam) {
+ const myObj = {
+    name: nameParam,
+    years: yearsParam,
+    genre: genreParam,
+    nationality: nationalityParam,
+    bio: bioParam
+};
+ array.push(myObj);
+ return array;
 }
+
+console.log(addArtist(artists, 'Rahul Lal', '1997-2022', 'Full Stack Development', 'Asian American','I am a student at Bloomtech'));
+
 
 
 
@@ -295,9 +319,14 @@ Use lotsOfArt to do the following:
 🌟 EXAMPLE: lotsOfArt(artists) will return ["Amedeo Modigliani", "Rene Magritte", ... "Albrecht Dürer"]
 */
 
-function lotsOfArt(/*Your Code Here*/) {
-  /*Your Code Here*/
+function lotsOfArt(artists) {
+
+  listArtist = artists.filter(paintings=>100);
+  return listArtist;
+
 }
+
+console.log(lotsOfArt(artists));
 
 
 
